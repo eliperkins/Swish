@@ -3,15 +3,15 @@ import Argo
 import Result
 
 public struct APIClient {
-  private let requestPerformer: RequestPerformer
+  private let requestPerformer: NetworkRequestPerformer
 
-  public init(requestPerformer: RequestPerformer = NetworkRequestPerformer()) {
+  public init(requestPerformer: NetworkRequestPerformer = NetworkRequestPerformer()) {
     self.requestPerformer = requestPerformer
   }
 }
 
 public extension APIClient {
-  func performRequest<T: Request>(request: T, completionHandler: Result<T.ResponseType, NSError> -> Void) {
+  func performRequest<T: RequestBuilder where T.RequestType: NSURLRequest>(request: T, completionHandler: Result<T.ResponseType, NSError> -> Void) {
     requestPerformer.performRequest(request.build()) { result in
       let object = result >>- deserialize >>- { request.parse($0) }
       completionHandler(object)

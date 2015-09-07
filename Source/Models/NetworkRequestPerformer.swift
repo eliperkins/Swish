@@ -1,7 +1,9 @@
 import Foundation
 import Result
 
-struct NetworkRequestPerformer: RequestPerformer {
+public struct NetworkRequestPerformer: RequestPerformer {
+  public typealias RequestType = NSURLRequest
+  public typealias RequestTaskType = NSURLSessionTask
   private let session: NSURLSession
 
   init(session: NSURLSession = NSURLSession.sharedSession()) {
@@ -10,14 +12,20 @@ struct NetworkRequestPerformer: RequestPerformer {
 }
 
 extension NetworkRequestPerformer {
-  func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, NSError> -> Void) {
-    session.dataTaskWithRequest(request) { data, response, error in
+  public func performRequest(request: RequestBuilderType.RequestType, completionHandler: Result<RequestBuilderType.ResponseType, NSError> -> Void) -> Self.RequestTaskType {
+    <#code#>
+  }
+  
+  public func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, NSError> -> Void) -> NSURLSessionTask {
+    let task = session.dataTaskWithRequest(request) { data, response, error in
       if let error = error {
         completionHandler(.Failure(error))
       } else {
         let response = HTTPResponse(data: data, response: response)
         completionHandler(.Success(response))
       }
-    }.resume()
+    }
+    task.resume()
+    return task
   }
 }

@@ -2,5 +2,7 @@ import Foundation
 import Result
 
 public protocol RequestPerformer {
-  func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, NSError> -> Void)
+  typealias RequestBuilderType: RequestBuilder
+  typealias RequestTaskType
+  func performRequest(request: RequestBuilderType.RequestType, completionHandler: Result<RequestBuilderType.ResponseType, NSError> -> Void) -> RequestTaskType
 }

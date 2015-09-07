@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		266BEE0E1B9DF1F800AD39B0 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266BEE0D1B9DF1F800AD39B0 /* HTTPRequest.swift */; settings = {ASSET_TAGS = (); }; };
 		F80694FC1B962BB900C61B4A /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80694F11B962BB900C61B4A /* Swish.framework */; settings = {ASSET_TAGS = (); }; };
 		F80695131B962C5300C61B4A /* NetworkRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */; settings = {ASSET_TAGS = (); }; };
 		F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950F1B962C5300C61B4A /* RequestPerformer.swift */; settings = {ASSET_TAGS = (); }; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		266BEE0D1B9DF1F800AD39B0 /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
 		F80694F11B962BB900C61B4A /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80694FB1B962BB900C61B4A /* SwishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestPerformer.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */,
 				F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */,
 				F88ED06C1B96736B0069F56C /* APIClient.swift */,
+				266BEE0D1B9DF1F800AD39B0 /* HTTPRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				F8DF3B8E1B964BED003177CD /* HTTPResponse.swift in Sources */,
 				F88ED0691B966E650069F56C /* Request.swift in Sources */,
 				F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */,
+				266BEE0E1B9DF1F800AD39B0 /* HTTPRequest.swift in Sources */,
 				F88ED06D1B96736B0069F56C /* APIClient.swift in Sources */,
 				F80695131B962C5300C61B4A /* NetworkRequestPerformer.swift in Sources */,
 			);
